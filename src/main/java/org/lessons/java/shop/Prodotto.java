@@ -7,17 +7,17 @@ class Prodotto {
 	String name;
 	String description;
 	double price;
-	int tax;
+	double tax;
 	
 	//costruttore
-	Prodotto(String name, String description, double price, int tax) {
-		//inizializza la proprietà codice prodotto, un numero random tra 100 e 999
+	Prodotto(String name, String description, double price, double tax) {
+		//inizializzazione della proprietà codice prodotto, un numero random tra 100 e 999
 		this.code = 100 + (int)(Math.random() * 900);
-		//inizializza le altre proprietà
+		//inizializzazione delle altre proprietà
 		this.name = name;
 		this.description = description;
 		this.price = price;
-		this.price = price;
+		this.tax = tax;
 	}
 	
 	//metodo che restituisce il prezzo
@@ -28,7 +28,7 @@ class Prodotto {
 	//metodo che restituisce il prezzo comprensivo di iva, arrotondato a due cifre decimali
 	double getFullPrice () {
 		price += price * (tax / 100);
-		return Math.round(price * 100) / 100;
+		return Math.floor(price * 100) / 100;
 	}
 	
 	//metodo che restituisce la concatenazione codice-nome
