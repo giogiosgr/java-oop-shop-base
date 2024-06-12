@@ -1,6 +1,6 @@
 package org.lessons.java.shop;
 
-class Prodotto {
+public class Prodotto {
     
 	//dichiarazione proprietà della classe
 	int code; 
@@ -10,7 +10,7 @@ class Prodotto {
 	double tax;
 	
 	//costruttore
-	Prodotto(String name, String description, double price, double tax) {
+	public Prodotto(String name, String description, double price, double tax) {
 		//inizializzazione della proprietà codice prodotto, un numero random tra 100 e 999
 		this.code = 100 + (int)(Math.random() * 900);
 		//inizializzazione delle altre proprietà
@@ -21,18 +21,18 @@ class Prodotto {
 	}
 	
 	//metodo che restituisce il prezzo
-	double getPrice() {
+	public double getPrice() {
 		return price;
 	}
 	
 	//metodo che restituisce il prezzo comprensivo di iva, arrotondato a due cifre decimali
-	double getFullPrice () {
+	public double getFullPrice () {
 		price += price * (tax / 100);
 		return Math.floor(price * 100) / 100;
 	}
 	
 	//metodo che restituisce la concatenazione codice-nome
-	String getFullName () {
+	public String getFullName () {
 		return code + "-" + name;
 	}
 }
